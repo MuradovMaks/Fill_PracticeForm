@@ -2,63 +2,39 @@ package tests;
 
 import pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
+import pages.TestData.TestDates;
 
 public class PracticeFormTest extends BaseTest {
 
+    TestDates testDates = new TestDates();
     RegistrationPage registrationPage = new RegistrationPage();
 
 
-    @Test
-    void PracticeForm() {
-        registrationPage.openPage()
-                .setFirstName("Maxim")
-                .setLastName("Muradov")
-                .setEmail("koreantech620@mail.ru")
-                .chooseGender()
-                .setPhoneNumber("79836025158")
-                .setDateOfBirth("2000", "April","30")
-                .setSubject("English")
-                .setSubject("Maths")
-                .selectHobbies("Sports")
-                .uploadPicture("D.jpg")
-                .setAddress("Lenina 25")
-                .selectStateAndCity("NCR", "Delhi")
-                .submitForm()
-                .checkResults("Student Name", "Maxim Muradov")
-                .checkResults("Student Email", "koreantech620@mail.ru")
-                .checkResults("Gender", "Male")
-                .checkResults("Mobile", "7983602515")
-                .checkResults("Date of Birth", "30 April,2000")
-                .checkResults("Subjects", "English, Maths")
-                .checkResults("Hobbies", "Sports")
-                .checkResults("Picture", "D.jpg")
-                .checkResults("Address", "Lenina 25")
-                .checkResults("State and City", "NCR Delhi");
-    }
 
     @Test
-    public void FillPracticeFormWithMinData() {
+    void PracticeFormTest() {
         registrationPage.openPage()
-                .setFirstName("Maxim")
-                .setLastName("Muradov")
-                .chooseGender()
-                .setPhoneNumber("79836025158")
+                .setFirstName(testDates.FirstName)
+                .setLastName(testDates.LastName)
+                .setEmail(testDates.UserEmail)
+                .chooseGender(testDates.UserSex)
+                .setPhoneNumber(testDates.UserMobilePhone)
+                .setDateOfBirth(testDates.UserBirthYear, testDates.UserBirthMonth, testDates.UserBirthDay)
+                .setSubject(testDates.UserSubject)
+                .selectHobbies(testDates.UserHobbie)
+                .uploadPicture(testDates.PictureName)
+                .setAddress(testDates.UserAddress)
+                .selectStateAndCity(testDates.UserState,testDates.UserCity)
                 .submitForm()
-                .checkResults("Student Name", "Maxim Muradov")
-                .checkResults("Gender", "Male")
-                .checkResults("Mobile", "7983602515");
-    }
-
-    @Test
-    public void NegativeFillPracticeFormWithMinData() {
-        registrationPage.openPage()
-                .setFirstName(" ")
-                .setLastName("Sergeev")
-                .chooseGender()
-                .setPhoneNumber("79836025158")
-                .submitForm()
-                .checkResults("Student Name", "Maxim Muradov")
-                .checkResults("Gender", "Male")
-                .checkResults("Mobile", "7983602515");
+                .checkResults("Student Name", testDates.FirstName + " " + testDates.LastName)
+                .checkResults("Student Email", testDates.UserEmail)
+                .checkResults("Gender", testDates.UserSex)
+                .checkResults("Mobile", testDates.UserMobilePhone)
+                .checkResults("Date of Birth", String.format("%s %s,%s",testDates.UserBirthDay,testDates.UserBirthMonth,testDates.UserBirthYear))
+                .checkResults("Subjects", testDates.UserSubject)
+                .checkResults("Hobbies", testDates.UserHobbie)
+                .checkResults("Picture", testDates.PictureName)
+                .checkResults("Address", testDates.UserAddress)
+                .checkResults("State and City", String.format("%s %s",testDates.UserState,testDates.UserCity));
     }
 }

@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.TestData.TestDates;
 import pages.components.CalendarComponent;
 import pages.components.TableResultComponent;
 
@@ -13,7 +14,7 @@ public class RegistrationPage
     private SelenideElement SetLastName = $("[id=lastName]");
 
     private SelenideElement SetEmail = $("[id=userEmail]");
-    private  SelenideElement ChooseCheckbox = $("label[class=custom-control-label]");
+    private  SelenideElement ChooseCheckbox = $("#genterWrapper");
     private SelenideElement SetMobileNum = $("[id=userNumber]");
     private SelenideElement ChooseDatePicker = $("[id=dateOfBirthInput]");
     private  SelenideElement SubjectFormOpen = $("[id=subjectsContainer]");
@@ -49,9 +50,9 @@ public class RegistrationPage
         SetEmail.setValue(email).pressEnter();
         return this;
     }
-    public RegistrationPage chooseGender()
+    public RegistrationPage chooseGender(String gender)
     {
-        ChooseCheckbox.click();
+        ChooseCheckbox.$(byText(gender)).click();
         return this;
     }
     public RegistrationPage setPhoneNumber(String number)
