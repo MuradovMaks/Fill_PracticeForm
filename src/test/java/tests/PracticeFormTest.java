@@ -2,7 +2,8 @@ package tests;
 
 import pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
-import pages.TestData.TestDates;
+import testData.TestDates;
+
 
 public class PracticeFormTest extends BaseTest {
 
@@ -12,7 +13,7 @@ public class PracticeFormTest extends BaseTest {
 
 
     @Test
-    void PracticeFormTest() {
+    void practiceFormTest() {
         registrationPage.openPage()
                 .setFirstName(testDates.FirstName)
                 .setLastName(testDates.LastName)
