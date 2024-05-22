@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Tag;
 public class BaseTest
 {
     @BeforeEach
+    @Tag("PracticeForm")
     void setUp() {
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1920x1080";
