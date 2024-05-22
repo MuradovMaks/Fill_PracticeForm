@@ -8,8 +8,9 @@ public class PracticeFormTest extends BaseTest {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
-    @Tag("PracticeForm")
+
     @Test
+    @Tag("PracticeForm")
     void PracticeForm() {
         registrationPage.openPage()
                 .setFirstName("Maxim")
@@ -36,7 +37,7 @@ public class PracticeFormTest extends BaseTest {
                 .checkResults("Address", "Lenina 25")
                 .checkResults("State and City", "NCR Delhi");
     }
-    @Tag("PracticeForm")
+
     @Test
     public void FillPracticeFormWithMinData() {
         registrationPage.openPage()
