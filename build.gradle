@@ -16,3 +16,8 @@ dependencies {
 test{
     useJUnitPlatform()
 }
+task practice_form(type: Test) {
+    useJUnitPlatform {
+        includeTags("JenkinsExersize")
+    }
+}

@@ -1,8 +1,9 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
-
+@Tag("PracticeForm")
 public class PracticeFormTest extends BaseTest {
 
     RegistrationPage registrationPage = new RegistrationPage();
