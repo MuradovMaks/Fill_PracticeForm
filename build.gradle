@@ -13,8 +13,15 @@ dependencies {
             'org.slf4j:slf4j-simple:2.0.7'
     )
 }
-test{
+tasks.withType(Test) {
     useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
 }
 task practice_form(type: Test) {
     useJUnitPlatform {
