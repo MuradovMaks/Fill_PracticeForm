@@ -1,12 +1,13 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import org.junit.jupiter.api.Tag;
 import pages.components.CalendarComponent;
 import pages.components.TableResultComponent;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-
+@Tag("PracticeForm")
 public class RegistrationPage
 {
     private SelenideElement SetFirstName = $("[id=firstName]");

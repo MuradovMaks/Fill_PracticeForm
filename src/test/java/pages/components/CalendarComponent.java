@@ -1,9 +1,10 @@
 package pages.components;
 
 import com.codeborne.selenide.SelenideElement;
+import org.junit.jupiter.api.Tag;
 
 import static com.codeborne.selenide.Selenide.$;
-
+@Tag("PracticeForm")
 public class CalendarComponent
 {
     private final SelenideElement Month = $("[class=react-datepicker__month-select]");
