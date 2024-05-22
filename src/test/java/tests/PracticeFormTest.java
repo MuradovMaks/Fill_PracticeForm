@@ -17,6 +17,7 @@ public class PracticeFormTest extends BaseTest {
     @Test
     void PracticeForm() {
 
+
         registrationPage.openPage()
                 .setFirstName("Maxim")
                 .setLastName("Muradov")
