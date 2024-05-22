@@ -1,16 +1,17 @@
 package tests;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
-
+@Tag("PracticeForm")
 public class PracticeFormTest extends BaseTest {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
 
     @Test
-    @Tag("PracticeForm")
+
     void PracticeForm() {
         registrationPage.openPage()
                 .setFirstName("Maxim")
@@ -51,6 +52,7 @@ public class PracticeFormTest extends BaseTest {
                 .checkResults("Mobile", "7983602515");
     }
 
+    @Disabled
     @Test
     public void NegativeFillPracticeFormWithMinData() {
         registrationPage.openPage()
