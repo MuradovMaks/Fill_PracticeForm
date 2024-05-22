@@ -11,7 +11,6 @@ public class PracticeFormTest extends BaseTest {
 
 
     @Test
-
     void PracticeForm() {
         registrationPage.openPage()
                 .setFirstName("Maxim")
@@ -52,8 +51,9 @@ public class PracticeFormTest extends BaseTest {
                 .checkResults("Mobile", "7983602515");
     }
 
-    @Disabled
+
     @Test
+    @Disabled
     public void NegativeFillPracticeFormWithMinData() {
         registrationPage.openPage()
                 .setFirstName(" ")
