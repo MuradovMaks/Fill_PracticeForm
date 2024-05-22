@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Tag;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-@Tag("PracticeForm")
+
 public class TableResultComponent
 {
     private final SelenideElement TableResponse =  $("[class=table-responsive]");
