@@ -2,8 +2,9 @@ package tests;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
-import pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
+import pages.RegistrationPage;
+
 @Tag("PracticeForm")
 public class PracticeFormTest extends BaseTest {
 
@@ -18,7 +19,7 @@ public class PracticeFormTest extends BaseTest {
                 .setEmail("koreantech620@mail.ru")
                 .chooseGender()
                 .setPhoneNumber("79836025158")
-                .setDateOfBirth("2000", "April","30")
+                .setDateOfBirth("2000", "April", "30")
                 .setSubject("English")
                 .setSubject("Maths")
                 .selectHobbies("Sports")
