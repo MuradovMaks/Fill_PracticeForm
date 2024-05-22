@@ -3,12 +3,12 @@ package tests;
 import org.junit.jupiter.api.Tag;
 import pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
-@Tag("PracticeForm")
+
 public class PracticeFormTest extends BaseTest {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
-
+    @Tag("PracticeForm")
     @Test
     void PracticeForm() {
         registrationPage.openPage()
@@ -36,7 +36,7 @@ public class PracticeFormTest extends BaseTest {
                 .checkResults("Address", "Lenina 25")
                 .checkResults("State and City", "NCR Delhi");
     }
-
+    @Tag("PracticeForm")
     @Test
     public void FillPracticeFormWithMinData() {
         registrationPage.openPage()
