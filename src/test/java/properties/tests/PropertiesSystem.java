@@ -12,9 +12,9 @@ public class PropertiesSystem
     @Tag("PracticeForm")
     void BrowserPropertie()
     {
-        browser = System.getProperty("browser","chrome");
         Configuration.remote = System.getProperty("Wdhost","https://user1:1234@selenoid.autotests.cloud/wd/hub");
-        Configuration.browserSize = System.getProperty("browserSize","1920x1080");
-        Configuration.browserVersion = System.getProperty("browserVersion","120.0");
+        browser = System.getProperty("Browser","chrome");
+        Configuration.browserVersion = System.getProperty("BrowserVersion","120.0");
+        Configuration.browserSize = System.getProperty("BrowserSize","1920x1080");
     }
 }
