@@ -42,3 +42,8 @@ task practice_form(type: Test) {
         includeTags("PracticeForm")
     }
 }
+task property_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("property")
+    }
+}
