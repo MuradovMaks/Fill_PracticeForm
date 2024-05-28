@@ -1,4 +1,4 @@
-package Attachments;
+package attachments;
 
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
