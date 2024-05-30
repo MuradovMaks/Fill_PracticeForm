@@ -31,20 +31,20 @@ public class RegistrationPage {
     @Step("Открываем страницу Practice Form")
     public RegistrationPage openPage() {
         open("/automation-practice-form");
+        return this;
+    }
+
+    @Step("Вводим Имя пользователя {firstName}")
+    public RegistrationPage setFirstName(String firstName) {
+        setFirstName.setValue(firstName);
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
     }
 
-    @Step("Вводим Имя пользователя {FirstName}")
-    public RegistrationPage setFirstName(String FirstName) {
-        setFirstName.setValue(FirstName);
-        return this;
-    }
-
-    @Step("Вводим Фамилию пользователя {LastName}")
-    public RegistrationPage setLastName(String LastName) {
-        setLastName.setValue(LastName);
+    @Step("Вводим Фамилию пользователя {lastName}")
+    public RegistrationPage setLastName(String lastName) {
+        setLastName.setValue(lastName);
         return this;
     }
 
