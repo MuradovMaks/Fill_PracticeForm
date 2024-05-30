@@ -15,7 +15,7 @@ public class PracticeFormTest extends BaseTest {
 
 
     @Test
-    void PracticeForm() {
+    void practiceForm() {
 
 
         registrationPage.openPage()
@@ -45,7 +45,7 @@ public class PracticeFormTest extends BaseTest {
     }
 
     @Test
-    public void FillPracticeFormWithMinData() {
+    public void fillPracticeFormWithMinData() {
         registrationPage.openPage()
                 .setFirstName("Maxim")
                 .setLastName("Muradov")
@@ -60,7 +60,7 @@ public class PracticeFormTest extends BaseTest {
 
     @Test
     @Disabled
-    public void NegativeFillPracticeFormWithMinData() {
+    public void negativeFillPracticeFormWithMinData() {
         registrationPage.openPage()
                 .setFirstName(" ")
                 .setLastName("Sergeev")
